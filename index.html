@@ -8,14 +8,15 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e0e8f5;
+            background-color: #1e1e1e;
+            color: white;
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         header {
-            background-color: #3498db;
+            background-color: #333;
             padding: 20px;
             color: white;
             font-size: 36px;
@@ -31,7 +32,6 @@
         nav a {
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #3498db;
             color: white;
             margin: 0 10px;
             border-radius: 5px;
@@ -39,24 +39,37 @@
             font-size: 16px;
         }
 
+        #blue-hives {
+            background-color: #3498db;
+        }
+
+        #red-hives {
+            background-color: #e74c3c;
+        }
+
+        #white-hives {
+            background-color: #ecf0f1;
+            color: #333;
+        }
+
         nav a:hover {
-            background-color: #2980b9;
+            background-color: #555;
         }
 
         section {
             margin: 20px;
             padding: 20px;
-            background-color: #fff;
+            background-color: #333;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #3498db;
+            color: white;
         }
 
         p {
-            color: #555;
+            color: #ccc;
             font-size: 16px;
         }
     </style>
@@ -68,9 +81,9 @@
     </header>
 
     <nav>
-        <a href="#red-hives">Red Hives</a>
-        <a href="#blue-hives">Blue Hives</a>
-        <a href="#white-hives">White Hives</a>
+        <a id="red-hives" href="#red-hives">Red Hives</a>
+        <a id="blue-hives" href="#blue-hives">Blue Hives</a>
+        <a id="white-hives" href="#white-hives">White Hives</a>
         <a href="#coming-soon">Coming Soon...</a>
     </nav>
 
