@@ -24,7 +24,9 @@
         }
 
         nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             justify-content: center;
             margin: 20px 0;
         }
@@ -39,6 +41,8 @@
             font-size: 18px;
             border: 2px solid #333;
             cursor: pointer;
+            display: block;
+            text-align: center;
         }
 
         nav a:hover {
@@ -46,7 +50,7 @@
             color: #fff;
         }
 
-        filler-content {
+        section {
             margin: 20px;
             padding: 30px;
             background-color: #f9f9f9;
@@ -71,14 +75,14 @@
         <a href="#red-hives">Red Hives</a>
         <a href="#blue-hives">Blue Hives</a>
         <a href="#white-hives">White Hives</a>
-        <a href="#coming-soon">Coming Soon...</a>
+        <a href="#general-guides">General Guides</a>
     </nav>
 
-    <filler-content>
+    <section>
         <h2>Filler Content</h2>
         <p>This is filler content to replace the sections.</p>
         <img src="https://via.placeholder.com/400" alt="Filler Image" style="max-width: 100%;">
-    </filler-content>
+    </section>
 </body>
 
 </html>
