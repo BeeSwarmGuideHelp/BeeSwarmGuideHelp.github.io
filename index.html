@@ -22,22 +22,7 @@
             color: #fff;
             font-size: 36px;
             margin-bottom: 20px;
-            position: relative; /* Make the header a positioning context */
         }
-
-        dot {
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        dot-red { background-color: #ff0000; }
-        dot-blue { background-color: #0000ff; }
-        dot-white { background-color: #f2f2f2; }
 
         /* Component Styles (20%) */
         main {
@@ -57,7 +42,7 @@
             transition: transform 0.3s;
         }
 
-        .tile {
+        tile {
             padding: 15px 30px;
             color: #333;
             border-radius: 5px;
@@ -70,9 +55,13 @@
             text-align: center;
         }
 
-        .tile:hover {
+        tile:hover {
             background-color: #333;
             color: #fff;
+        }
+
+        /* Utility Styles (10%) */
+        tile:hover {
             transform: scale(1.05);
         }
     </style>
@@ -80,31 +69,28 @@
 
 <body>
     <header>
-        <dot class="dot-red"></dot>
-        <h2>Red Hives</h2>
+        Bee Swarm Guide Help
     </header>
 
     <main>
         <section onclick="location.href='#red-hives'">
-            <span class="tile">Explore</span>
+            <h2>Red Hives</h2>
+            <tile>Explore</tile>
         </section>
 
         <section onclick="location.href='#blue-hives'">
-            <dot class="dot-blue"></dot>
             <h2>Blue Hives</h2>
-            <span class="tile">Discover</span>
+            <tile>Discover</tile>
         </section>
 
         <section onclick="location.href='#white-hives'">
-            <dot class="dot-white"></dot>
             <h2>White Hives</h2>
-            <span class="tile">Learn More</span>
+            <tile>Learn More</tile>
         </section>
 
         <section onclick="location.href='#general-guides'">
-            <dot class="dot-white"></dot>
             <h2>General Guides</h2>
-            <span class="tile">Read Now</span>
+            <tile>Read Now</tile>
         </section>
     </main>
 </body>
