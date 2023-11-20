@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff;
+            background-color: #f2f2f2;
             color: #333;
             margin: 0;
             padding: 0;
@@ -23,17 +23,28 @@
             margin-bottom: 20px;
         }
 
-        tiles {
+        main {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* 100% of the viewport height */
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: scale(1.05);
         }
 
         tile {
-            width: 100%;
             padding: 15px 30px;
             color: #333;
             border-radius: 5px;
@@ -42,6 +53,8 @@
             border: 2px solid #333;
             cursor: pointer;
             box-sizing: border-box;
+            display: block;
+            text-align: center;
         }
 
         tile:hover {
@@ -56,12 +69,27 @@
         Bee Swarm Guide Help
     </header>
 
-    <tiles>
-        <tile onclick="location.href='#red-hives'">Red Hives</tile>
-        <tile onclick="location.href='#blue-hives'">Blue Hives</tile>
-        <tile onclick="location.href='#white-hives'">White Hives</tile>
-        <tile onclick="location.href='#general-guides'">General Guides</tile>
-    </tiles>
+    <main>
+        <section onclick="location.href='#red-hives'">
+            <h2>Red Hives</h2>
+            <tile>Explore</tile>
+        </section>
+
+        <section onclick="location.href='#blue-hives'">
+            <h2>Blue Hives</h2>
+            <tile>Discover</tile>
+        </section>
+
+        <section onclick="location.href='#white-hives'">
+            <h2>White Hives</h2>
+            <tile>Learn More</tile>
+        </section>
+
+        <section onclick="location.href='#general-guides'">
+            <h2>General Guides</h2>
+            <tile>Read Now</tile>
+        </section>
+    </main>
 </body>
 
 </html>
