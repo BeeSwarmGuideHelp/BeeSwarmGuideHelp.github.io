@@ -23,7 +23,7 @@
             margin-bottom: 20px;
         }
 
-        nav {
+        tiles {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
@@ -31,29 +31,23 @@
             margin: 20px 0;
         }
 
-        nav a {
-            text-decoration: none;
+        tile {
             padding: 15px 30px;
             color: #333;
-            margin: 0 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
             font-size: 18px;
             border: 2px solid #333;
             cursor: pointer;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
-        nav a:hover {
+        tile:hover {
             background-color: #333;
             color: #fff;
-        }
-
-        h2 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -63,12 +57,12 @@
         Bee Swarm Guide Help
     </header>
 
-    <nav>
-        <a href="#red-hives">Red Hives</a>
-        <a href="#blue-hives">Blue Hives</a>
-        <a href="#white-hives">White Hives</a>
-        <a href="#general-guides">General Guides</a>
-    </nav>
+    <tiles>
+        <tile onclick="location.href='#red-hives'">Red Hives</tile>
+        <tile onclick="location.href='#blue-hives'">Blue Hives</tile>
+        <tile onclick="location.href='#white-hives'">White Hives</tile>
+        <tile onclick="location.href='#general-guides'">General Guides</tile>
+    </tiles>
 </body>
 
 </html>
