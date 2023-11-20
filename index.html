@@ -33,15 +33,23 @@
         }
 
         section {
-            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 30px;
             transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
         }
 
         section:hover {
             transform: scale(1.05);
+        }
+
+        red-hives {
+            background-color: #ffdddd; /* Subtle red color */
+        }
+
+        blue-hives {
+            background-color: #ddeeff; /* Subtle blue color */
         }
 
         tile {
@@ -70,12 +78,12 @@
     </header>
 
     <main>
-        <section onclick="location.href='#red-hives'">
+        <section class="red-hives" onclick="location.href='#red-hives'">
             <h2>Red Hives</h2>
             <tile>Explore</tile>
         </section>
 
-        <section onclick="location.href='#blue-hives'">
+        <section class="blue-hives" onclick="location.href='#blue-hives'">
             <h2>Blue Hives</h2>
             <tile>Discover</tile>
         </section>
