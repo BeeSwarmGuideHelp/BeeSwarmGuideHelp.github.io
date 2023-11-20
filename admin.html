@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel - Bee Swarm Guide Help</title>
+    <!-- Include Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
+
+    <!-- Your web app's Firebase configuration -->
+<!-- Your web app's Firebase configuration -->
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXYQkC8B7f_dlGSinNjZat8b8Ux-xvcGc",
+        authDomain: "beeswarmguidehelp.firebaseapp.com",
+        projectId: "beeswarmguidehelp",
+        storageBucket: "beeswarmguidehelp.appspot.com",
+        messagingSenderId: "817463728663",
+        appId: "1:817463728663:web:e4416b202ea4b979129a52",
+        measurementId: "G-EPXXDRSSDE"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const firestore = firebase.firestore();
+</script>
+
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 200px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Admin Control Panel
+    </header>
+
+    <button onclick="signOut()">Sign Out</button>
+
+    <h2>Change Website Content:</h2>
+    <textarea id="contentToUpdate" placeholder="Enter new content..."></textarea>
+    <button onclick="updateContent()">Update Content</button>
+
+    <script>
+        function signOut() {
+            auth.signOut().then(() => {
+                // Sign-out successful.
+                window.location.href = "login.html"; // Redirect to login page after sign out
+            }).catch((error) => {
+                console.error("Sign out error:", error);
+            });
+        }
+
+        function updateContent() {
+            const newContent = document.getElementById("contentToUpdate").value;
+
+            // Update content in Firestore or perform any other desired action
+            // For simplicity, this example uses a hardcoded document ID "mainContent"
+            firestore.collection("content").doc("mainContent").set({
+                text: newContent
+            }).then(() => {
+                console.log("Content updated successfully!");
+            }).catch((error) => {
+                console.error("Error updating content:", error);
+            });
+        }
+    </script>
+</body>
+
+</html>
