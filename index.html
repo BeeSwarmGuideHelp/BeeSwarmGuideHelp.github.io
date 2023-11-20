@@ -22,7 +22,22 @@
             color: #fff;
             font-size: 36px;
             margin-bottom: 20px;
+            position: relative; /* Make the header a positioning context */
         }
+
+        dot {
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        dot-red { background-color: #ff0000; }
+        dot-blue { background-color: #0000ff; }
+        dot-white { background-color: #f2f2f2; }
 
         /* Component Styles (20%) */
         main {
@@ -40,22 +55,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 30px;
             transition: transform 0.3s;
-            position: relative;
         }
-
-        .dot {
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .dot-red { background-color: #ff0000; }
-        .dot-blue { background-color: #0000ff; }
-        .dot-white { background-color: #f2f2f2; }
 
         .tile {
             padding: 15px 30px;
@@ -80,33 +80,17 @@
 
 <body>
     <header>
-        Bee Swarm Guide Help
+        <dot class="dot-red"></dot>
+        <h2>Red Hives</h2>
     </header>
 
     <main>
         <section onclick="location.href='#red-hives'">
-            <span class="dot dot-red"></span>
-            <h2>Red Hives</h2>
             <span class="tile">Explore</span>
         </section>
 
-        <section onclick="location.href='#blue-hives'">
-            <span class="dot dot-blue"></span>
-            <h2>Blue Hives</h2>
-            <span class="tile">Discover</span>
-        </section>
+        <!-- Repeat the same structure for other sections -->
 
-        <section onclick="location.href='#white-hives'">
-            <span class="dot dot-white"></span>
-            <h2>White Hives</h2>
-            <span class="tile">Learn More</span>
-        </section>
-
-        <section onclick="location.href='#general-guides'">
-            <span class="dot dot-white"></span>
-            <h2>General Guides</h2>
-            <span class="tile">Read Now</span>
-        </section>
     </main>
 </body>
 
