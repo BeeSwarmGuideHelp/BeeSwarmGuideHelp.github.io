@@ -27,15 +27,12 @@
         };
 
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
     </script>
 
     <!-- Specify your app's client ID -->
     <meta name="google-signin-client_id" content="989834046248-0cq6necocm7qrg1s0duh993mfs7qq39p.apps.googleusercontent.com">
-
-    <!-- Your existing styles and other head elements -->
-    <!-- ... -->
 
     <style>
         body {
@@ -80,6 +77,11 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .g-signin2 {
+            margin-top: 20px;
         }
     </style>
 </head>
