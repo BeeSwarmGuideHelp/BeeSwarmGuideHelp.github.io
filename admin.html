@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Control Panel - Bee Swarm Guide Help</title>
-    <!-- Include Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
-
-    <!-- Your web app's Firebase configuration -->
 <!-- Your web app's Firebase configuration -->
 <script>
     const firebaseConfig = {
@@ -29,46 +16,17 @@
     const firestore = firebase.firestore();
 </script>
 
+<!-- Include Axios library for making HTTP requests -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+<!-- Your OpenAI GPT API key -->
+<script>
+    const openaiApiKey = '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';
+</script>
 
-        header {
-            background-color: #333;
-            padding: 20px;
-            color: #fff;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-        }
-
-        textarea {
-            width: 80%;
-            height: 200px;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-    </style>
-</head>
+<style>
+    /* Add your custom styles here */
+</style>
 
 <body>
     <header>
@@ -77,9 +35,10 @@
 
     <button onclick="signOut()">Sign Out</button>
 
-    <h2>Change Website Content:</h2>
-    <textarea id="contentToUpdate" placeholder="Enter new content..."></textarea>
-    <button onclick="updateContent()">Update Content</button>
+    <h2>Chat with ChatGPT:</h2>
+    <div id="chatContainer"></div>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
 
     <script>
         function signOut() {
@@ -91,20 +50,23 @@
             });
         }
 
-        function updateContent() {
-            const newContent = document.getElementById("contentToUpdate").value;
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            const chatContainer = document.getElementById('chatContainer');
 
-            // Update content in Firestore or perform any other desired action
-            // For simplicity, this example uses a hardcoded document ID "mainContent"
-            firestore.collection("content").doc("mainContent").set({
-                text: newContent
-            }).then(() => {
-                console.log("Content updated successfully!");
-            }).catch((error) => {
-                console.error("Error updating content:", error);
-            });
+            // Display user message
+            chatContainer.innerHTML += `<div>User: ${userInput}</div>`;
+
+            // Send user message to server (server handles OpenAI API request)
+            axios.post('/api/chat', { userInput, openaiApiKey })
+                .then(response => {
+                    // Display ChatGPT response
+                    chatContainer.innerHTML += `<div>ChatGPT: ${response.data.response}</div>`;
+                })
+                .catch(error => {
+                    console.error('Error interacting with OpenAI API:', error);
+                    chatContainer.innerHTML += '<div>Error communicating with ChatGPT</div>';
+                });
         }
     </script>
 </body>
-
-</html>
