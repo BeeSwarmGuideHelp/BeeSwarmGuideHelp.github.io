@@ -17,13 +17,13 @@
     <script>
         // Your Firebase configuration
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID",
-            measurementId: "YOUR_MEASUREMENT_ID"
+            apiKey: "AIzaSyCXYQkC8B7f_dlGSinNjZat8b8Ux-xvcGc",
+            authDomain: "beeswarmguidehelp.firebaseapp.com",
+            projectId: "beeswarmguidehelp",
+            storageBucket: "beeswarmguidehelp.appspot.com",
+            messagingSenderId: "817463728663",
+            appId: "1:817463728663:web:e4416b202ea4b979129a52",
+            measurementId: "G-EPXXDRSSDE"
         };
 
         // Initialize Firebase
@@ -32,7 +32,7 @@
     </script>
 
     <!-- Specify your app's client ID -->
-   <meta name="google-signin-client_id" content="989834046248-0cq6necocm7qrg1s0duh993mfs7qq39p.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="989834046248-0cq6necocm7qrg1s0duh993mfs7qq39p.apps.googleusercontent.com">
 
     <!-- Your existing styles and other head elements -->
     <!-- ... -->
@@ -109,6 +109,7 @@
                     // User signed in
                     const user = userCredential.user;
                     console.log("Login successful:", user);
+
                     // Redirect or perform other actions after login
                 })
                 .catch((error) => {
@@ -121,24 +122,18 @@
 
         // Google Sign-In Callback
         function onGoogleSignIn(googleUser) {
-            const credential = GoogleAuthProvider.credential(
-                googleUser.getAuthResponse().id_token
-            );
+            // Access user profile information
+            var profile = googleUser.getBasicProfile();
 
-            // Sign in with the Google credential
-            firebase.auth().signInWithCredential(credential)
-                .then((userCredential) => {
-                    // User signed in with Google
-                    const user = userCredential.user;
-                    console.log("Google Sign-In successful:", user);
-                    // Redirect or perform other actions after Google Sign-In
-                })
-                .catch((error) => {
-                    // Handle Google Sign-In errors
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error("Google Sign-In error:", errorCode, errorMessage);
-                });
+            // Log user information to the console
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+
+            // You can also use the profile information as needed in your application
+            // For example, display the user's name on your page
+            document.getElementById('user-name').innerText = 'Welcome, ' + profile.getName();
         }
     </script>
 </body>
