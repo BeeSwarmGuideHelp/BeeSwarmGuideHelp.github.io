@@ -5,6 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee Swarm Guide Help</title>
+    <!-- Include Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js"></script>
+
+    <!-- Your web app's Firebase configuration -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXYQkC8B7f_dlGSinNjZat8b8Ux-xvcGc",
+            authDomain: "beeswarmguidehelp.firebaseapp.com",
+            projectId: "beeswarmguidehelp",
+            storageBucket: "beeswarmguidehelp.appspot.com",
+            messagingSenderId: "817463728663",
+            appId: "1:817463728663:web:e4416b202ea4b979129a52",
+            measurementId: "G-EPXXDRSSDE"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <!-- Your existing styles and other head elements -->
+    <!-- ... -->
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
