@@ -111,7 +111,7 @@
                     console.log("Login successful:", user);
 
                     // Redirect to a different page after login
-                    window.location.href = index.html;
+                    window.location.href = "https://beeswarmguidehelp.github.io/";
                 })
                 .catch((error) => {
                     // Handle login errors
@@ -135,6 +135,9 @@
             // You can also use the profile information as needed in your application
             // For example, display the user's name on your page
             document.getElementById('user-name').innerText = 'Welcome, ' + profile.getName();
+
+            // Close the Google Sign-In popup
+            googleUser.disconnect();
         }
     </script>
 </body>
