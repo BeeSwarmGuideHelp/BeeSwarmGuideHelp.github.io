@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff & Helpers - Bee Swarm Guide Help</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        .staff-helpers {
+            background-color: #556b2f; /* Subtle green color */
+        }
+
+        tile {
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: block;
+            text-align: center;
+        }
+
+        tile:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .profile {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .about-me {
+            text-align: left;
+        }
+
+        footer {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .discord-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle; /* Align the Discord icon vertically */
+        }
+
+        .discord-link {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: middle; /* Align the text vertically */
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Staff & Helpers - Bee Swarm Guide Help
+    </header>
+
+    <main>
+        <section class="staff-helpers">
+            <h2>Helpers</h2>
+
+            <div class="profile">
+                <img src="images/helper1.jpg" alt="Helper 1" class="profile">
+            </div>
+
+            <div class="about-me">
+                <h3>Helper 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt bibendum leo, eget cursus
+                    lacus venenatis vel. Vivamus aliquet ullamcorper massa, et fermentum metus ultricies vel. Duis
+                    vehicula sit amet quam vitae euismod.</p>
+            </div>
+
+            <!-- Repeat the above structure for each helper -->
+
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://discord.com/invite/bsgh" class="discord-link">
+            <img src="images/discord.png" alt="Discord Icon" class="discord-icon">
+            BSGH Discord
+        </a>
+        <div class="copyright">&copy; Bee Swarm Guide Help 2023</div>
+    </footer>
+</body>
+
+</html>
