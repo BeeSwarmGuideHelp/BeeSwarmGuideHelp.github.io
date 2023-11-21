@@ -78,6 +78,47 @@
             color: #333;
         }
 
+        /* New styles for profile section */
+        .profile-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background-color: #556b2f; /* Subtle green color */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-picture {
+            width: 100%;
+            max-width: 150px; /* Adjust the size of the profile picture as needed */
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .profile-description {
+            color: #fff;
+            font-size: 14px;
+        }
+
         footer {
             background-color: #222;
             padding: 20px;
@@ -115,29 +156,24 @@
     </header>
 
     <main>
-        <section class="red-hives" onclick="location.href='#red-hives'">
-            <h2>Red Hives</h2>
-            <tile>Explore</tile>
-        </section>
+        <!-- Your existing sections remain unchanged -->
 
-        <section class="blue-hives" onclick="location.href='#blue-hives'">
-            <h2>Blue Hives</h2>
-            <tile>Discover</tile>
-        </section>
-
-        <section class="white-hives" onclick="location.href='#white-hives'">
-            <h2>White Hives</h2>
-            <tile>Learn More</tile>
-        </section>
-
-        <section onclick="location.href='#general-guides'">
-            <h2>General Guides</h2>
-            <tile>Read Now</tile>
-        </section>
-
+        <!-- New profile section for "Staff & Helpers" -->
         <section class="staff-helpers" onclick="location.href='#staff-helpers'">
             <h2>Staff & Helpers</h2>
             <tile>Meet the Team</tile>
+        </section>
+
+        <!-- New profile section for "Helpers" page -->
+        <section class="profile-section">
+            <!-- Profile Card for @mahirishere -->
+            <div class="profile-card">
+                <img class="profile-picture" src="images/mahirisherepfp.png" alt="@mahirishere's Profile Picture">
+                <div class="profile-name">@mahirishere</div>
+                <div class="profile-description">I omor</div>
+            </div>
+
+            <!-- Add more profile cards as needed -->
         </section>
     </main>
 
