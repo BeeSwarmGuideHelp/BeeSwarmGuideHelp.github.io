@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee Swarm Guide Help</title>
+    <meta name="description" content="Bee Swarm Guide Help Website">
+    <meta name="google-site-verification" content="wQKdbLmr9N6DyY4QDy3kePV7TjBIGnHTZAXqqfH1VdM" />
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,15 +21,16 @@
             background-color: #222;
             padding: 20px;
             color: #fff;
-            font-size: 36px;
+            font-size: 24px; /* Adjust the font size */
             margin-bottom: 20px;
+            font-weight: lighter; /* Adjust the font weight for a more minimal look */
         }
 
         main {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             padding: 20px;
         }
@@ -35,47 +38,110 @@
         section {
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            padding: 30px;
+            padding: 20px;
             transition: transform 0.3s;
-            overflow: hidden; /* Ensure the border-radius applies correctly */
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            cursor: pointer;
+            margin: 0 auto; /* Center the section horizontally */
         }
 
         section:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
-        .red-hives {
-            background-color: #442222; /* Subtle red color */
+        .role-section {
+            margin-bottom: 30px;
+            grid-column: span 2;
         }
 
-        .blue-hives {
-            background-color: #223344; /* Subtle blue color */
+        .role-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d99921;
+            margin-bottom: 10px;
         }
 
-        .white-hives {
-            background-color: #d4d3cf; /* Subtle white color */
+        .owners {
+            background-color: #442222;
         }
 
-        .staff-helpers {
-            background-color: #556b2f; /* Subtle green color */
+        .server-manager {
+            background-color: #00FFF2;
         }
 
-        tile {
-            padding: 15px 30px;
-            color: #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 18px;
-            border: 2px solid #fff;
-            cursor: pointer;
-            box-sizing: border-box;
-            display: block;
+        .administrators {
+            background-color: #223344; 
+        }
+
+        .head-moderator {
+            background-color: #d99921;
+        }
+
+        .trainee-moderators {
+            background-color: #556b2f;
+        }
+
+        .helpers {
+            background-color: #556b2f;
+        }
+
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .mahir-profile {
+            background-color: #d99921;
+            display: flex;
+            flex-direction: column; /* Adjusted the layout to column */
+            align-items: center;
             text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
         }
 
-        tile:hover {
-            background-color: #fff;
-            color: #333;
+        .socky-profile {
+            background-color: #7777DF;
+            display: flex;
+            flex-direction: column; /* Adjusted the layout to column */
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
+        }
+
+        .larsitas-profile {
+            background-color: #00FFF2;
+            display: flex;
+            flex-direction: column; /* Adjusted the layout to column */
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
+        }
+
+        .profile-container {
+            overflow: hidden;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .profile {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .profile-name {
+            margin: 10px 0 0; 
+        }
+
+        section:hover .about-me {
+            opacity: 1;
         }
 
         footer {
@@ -83,62 +149,154 @@
             padding: 20px;
             color: #fff;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            clear: both;
         }
 
         .discord-icon {
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            vertical-align: middle; /* Align the Discord icon vertically */
+            vertical-align: middle; 
         }
 
         .discord-link {
             color: #fff;
             text-decoration: none;
             display: inline-block;
-            vertical-align: middle; /* Align the text vertically */
+            vertical-align: middle;
         }
 
         .copyright {
             margin-top: 10px;
             font-size: 14px;
         }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup-content {
+            background-color: #222;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .close {
+            color: #ccc;
+            float: right;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+        }
+
+        .about-me {
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        section:hover .about-me {
+            opacity: 1;
+        }
+
+        .about-me-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        Bee Swarm Guide Help
+        Staff & Helpers - Bee Swarm Guide Help
     </header>
 
     <main>
-        <section class="red-hives" onclick="location.href='#red-hives'">
-            <h2>Red Hives</h2>
-            <tile>Explore</tile>
-        </section>
+        <!-- Owners Section -->
+        <div class="role-section">
+            <div class="role-title">Owners</div>
+            <div class="profiles">
+                <!-- BadurMathGuy Profile -->
+                <section class="owners-profile" onclick="openPopup('badur')">
+                    <div class="profile-container">
+                        <img src="images/badurpfp.png" alt="BadurMathGuy" class="profile">
+                    </div>
+                    <h2 class="profile-name">BadurMathGuy</h2>
+                </section>
 
-        <section class="blue-hives" onclick="location.href='#blue-hives'">
-            <h2>Blue Hives</h2>
-            <tile>Discover</tile>
-        </section>
+                <!-- Xyrioc Profile -->
+                <section class="owners-profile" onclick="openPopup('xyrioc')">
+                    <div class="profile-container">
+                        <img src="images/xyriocpfp.png" alt="Xyrioc" class="profile">
+                    </div>
+                    <h2 class="profile-name">Xyrioc</h2>
+                </section>
+            </div>
+        </div>
 
-        <section class="white-hives" onclick="location.href='#white-hives'">
-            <h2>White Hives</h2>
-            <tile>Learn More</tile>
-        </section>
+        <!-- Server Manager Section -->
+        <div class="role-section">
+            <div class="role-title">Server Manager</div>
+            <section class="larsitas-profile" onclick="openPopup('larsitas')">
+                <div class="profile-container">
+                    <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
+                </div>
+                <h2 class="profile-name">larsitas</h2>
+            </section>
+        </div>
 
-        <section onclick="location.href='#general-guides'">
-            <h2>General Guides</h2>
-            <tile>Read Now</tile>
-        </section>
+        <!-- Administrators Section -->
+        <div class="role-section">
+            <div class="role-title">Administrators</div>
+        </div>
 
-        <section class="staff-helpers" onclick="location.href='staff-helpers'">
-            <h2>Staff & Helpers</h2>
-            <tile>Meet the Team</tile>
-        </section>
+        <!-- Head Moderator Section -->
+        <div class="role-section">
+            <div class="role-title">Head Moderator</div>
+        </div>
+
+        <!-- Trainee Moderators Section -->
+        <div class="role-section">
+            <div class="role-title">Trainee Moderators</div>
+        </div>
+
+        <!-- Helpers Section -->
+        <div class="role-section">
+            <div class="role-title">Helpers</div>
+            <div class="profiles">
+                <section class="mahir-profile" onclick="openPopup('mahir')">
+                    <div class="profile-container">
+                        <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
+                    </div>
+                    <h2 class="profile-name">mahirishere</h2>
+                </section>
+
+                <section class="socky-profile" onclick="openPopup('socky')">
+                    <div class="profile-container">
+                        <img src="images/socky.png" alt="Socky" class="profile">
+                    </div>
+                    <h2 class="profile-name">socky</h2>
+                </section>
+            </div>
+        </div>
+        
     </main>
 
     <footer>
@@ -148,6 +306,58 @@
         </a>
         <div class="copyright">&copy; Bee Swarm Guide Help 2023</div>
     </footer>
+
+    <div id="mahirPopup" class="popup" onclick="closePopup('mahir')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('mahir')">&times;</span>
+            <h2 class="profile-name">mahirishere</h2>
+            <div class="profile-container">
+                <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>I omor</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="larsitasPopup" class="popup" onclick="closePopup('larsitas')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('larsitas')">&times;</span>
+            <h2 class="profile-name">larsitas</h2>
+            <div class="profile-container">
+                <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>[Write something about Larsitas]</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sockyPopup" class="popup" onclick="closePopup('socky')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('socky')">&times;</span>
+            <h2 class="profile-name">socky</h2>
+            <div class="profile-container">
+                <img src="images/socky.png" alt="Socky" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>[Write something about Socky]</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(profileName) {
+            document.getElementById(profileName + 'Popup').style.display = 'block';
+        }
+
+        function closePopup(profileName) {
+            document.getElementById(profileName + 'Popup').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
