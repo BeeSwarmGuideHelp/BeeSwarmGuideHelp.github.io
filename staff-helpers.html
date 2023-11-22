@@ -19,16 +19,16 @@
             background-color: #222;
             padding: 20px;
             color: #fff;
-            font-size: 24px; /* Adjust the font size */
+            font-size: 24px;
             margin-bottom: 20px;
-            font-weight: lighter; /* Adjust the font weight for a more minimal look */
+            font-weight: lighter;
         }
 
         main {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             padding: 20px;
         }
@@ -36,17 +36,13 @@
         section {
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 30px;
             transition: transform 0.3s;
             overflow: hidden;
-            position: relative;
-            width: 80%;
-            cursor: pointer;
-            margin: 0 auto; /* Center the section horizontally */
         }
 
         section:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .role-section {
@@ -61,27 +57,27 @@
             margin-bottom: 10px;
         }
 
-        .owners {
+        .owners-profile {
             background-color: #442222;
         }
 
-        .server-manager {
+        .server-manager-profile {
             background-color: #00FFF2;
         }
 
-        .administrators {
+        .administrators-profile {
             background-color: #223344; 
         }
 
-        .head-moderator {
+        .head-moderator-profile {
             background-color: #d99921;
         }
 
-        .trainee-moderators {
+        .trainee-moderators-profile {
             background-color: #556b2f;
         }
 
-        .helpers {
+        .helpers-profile {
             background-color: #556b2f;
         }
 
@@ -91,34 +87,34 @@
             gap: 20px;
         }
 
-        .mahir-profile{
+        .mahir-profile {
             background-color: #d99921;
             display: flex;
-            flex-direction: column; /* Adjusted the layout to column */
+            flex-direction: column;
             align-items: center;
             text-align: center;
             width: 80%;
-            margin: 0 auto; /* Center the profile horizontally */
-        }
-        
-        .socky-profile{
-            background-color: #7777DF;
-            display: flex;
-            flex-direction: column; /* Adjusted the layout to column */
-            align-items: center;
-            text-align: center;
-            width: 80%;
-            margin: 0 auto; /* Center the profile horizontally */
+            margin: 0 auto;
         }
 
-        .larsitas-profile {
-            background-color: #00FFF2;
+        .socky-profile {
+            background-color: #7777DF;
             display: flex;
-            flex-direction: column; /* Adjusted the layout to column */
+            flex-direction: column;
             align-items: center;
             text-align: center;
             width: 80%;
-            margin: 0 auto; /* Center the profile horizontally */
+            margin: 0 auto;
+        }
+
+        .denz-profile {
+            background-color: #8b0000; /* New profile color for Denz */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
         }
 
         .profile-container {
@@ -168,56 +164,6 @@
             margin-top: 10px;
             font-size: 14px;
         }
-
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .popup-content {
-            background-color: #222;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            border-radius: 10px;
-            color: #fff;
-            text-align: center;
-        }
-
-        .close {
-            color: #ccc;
-            float: right;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #fff;
-        }
-
-        .about-me {
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        section:hover .about-me {
-            opacity: 1;
-        }
-
-        .about-me-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 
@@ -252,7 +198,7 @@
         <!-- Server Manager Section -->
         <div class="role-section">
             <div class="role-title">Server Manager</div>
-            <section class="larsitas-profile" onclick="openPopup('larsitas')">
+            <section class="server-manager-profile" onclick="openPopup('larsitas')">
                 <div class="profile-container">
                     <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
                 </div>
@@ -263,16 +209,19 @@
         <!-- Administrators Section -->
         <div class="role-section">
             <div class="role-title">Administrators</div>
+            <!-- Add content for Administrators if needed -->
         </div>
 
         <!-- Head Moderator Section -->
         <div class="role-section">
             <div class="role-title">Head Moderator</div>
+            <!-- Add content for Head Moderator if needed -->
         </div>
 
         <!-- Trainee Moderators Section -->
         <div class="role-section">
             <div class="role-title">Trainee Moderators</div>
+            <!-- Add content for Trainee Moderators if needed -->
         </div>
 
         <!-- Helpers Section -->
@@ -292,9 +241,16 @@
                     </div>
                     <h2 class="profile-name">socky</h2>
                 </section>
+
+                <!-- Denz Profile -->
+                <section class="denz-profile" onclick="openPopup('denz')">
+                    <div class="profile-container">
+                        <img src="images/denz.png" alt="Denz" class="profile">
+                    </div>
+                    <h2 class="profile-name">Denz</h2>
+                </section>
             </div>
         </div>
-        
     </main>
 
     <footer>
@@ -305,47 +261,7 @@
         <div class="copyright">&copy; Bee Swarm Guide Help 2023</div>
     </footer>
 
-    <div id="mahirPopup" class="popup" onclick="closePopup('mahir')">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup('mahir')">&times;</span>
-            <h2 class="profile-name">mahirishere</h2>
-            <div class="profile-container">
-                <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
-            </div>
-            <div class="about-me">
-                <div class="about-me-title">About Me:</div>
-                <p>I omor</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="larsitasPopup" class="popup" onclick="closePopup('larsitas')">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup('larsitas')">&times;</span>
-            <h2 class="profile-name">larsitas</h2>
-            <div class="profile-container">
-                <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
-            </div>
-            <div class="about-me">
-                <div class="about-me-title">About Me:</div>
-                <p>[Write something about Larsitas]</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="sockyPopup" class="popup" onclick="closePopup('socky')">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup('socky')">&times;</span>
-            <h2 class="profile-name">socky</h2>
-            <div class="profile-container">
-                <img src="images/socky.png" alt="Socky" class="profile">
-            </div>
-            <div class="about-me">
-                <div class="about-me-title">About Me:</div>
-                <p>[Write something about Socky]</p>
-            </div>
-        </div>
-    </div>
+    <!-- Add your popup divs and JavaScript for popups if needed -->
 
     <script>
         function openPopup(profileName) {
