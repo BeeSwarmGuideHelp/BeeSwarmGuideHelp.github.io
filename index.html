@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee Swarm Guide Help</title>
-    <meta name="description" content="Bee Swarm Guide Help Website">
-    <meta name="google-site-verification" content="wQKdbLmr9N6DyY4QDy3kePV7TjBIGnHTZAXqqfH1VdM" />
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -39,7 +37,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             padding: 30px;
             transition: transform 0.3s;
-            overflow: hidden;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
         }
 
         section:hover {
@@ -47,19 +45,19 @@
         }
 
         .red-hives {
-            background-color: #442222;
+            background-color: #442222; /* Subtle red color */
         }
 
         .blue-hives {
-            background-color: #223344;
+            background-color: #223344; /* Subtle blue color */
         }
 
         .white-hives {
-            background-color: #d4d3cf;
+            background-color: #d4d3cf; /* Subtle white color */
         }
 
         .staff-helpers {
-            background-color: #556b2f;
+            background-color: #556b2f; /* Subtle green color */
         }
 
         tile {
@@ -94,14 +92,14 @@
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            vertical-align: middle;
+            vertical-align: middle; /* Align the Discord icon vertically */
         }
 
         .discord-link {
             color: #fff;
             text-decoration: none;
             display: inline-block;
-            vertical-align: middle;
+            vertical-align: middle; /* Align the text vertically */
         }
 
         .copyright {
@@ -117,7 +115,7 @@
     </header>
 
     <main>
-        <section class="red-hives" onclick="location.href='#red-hives'">
+        <section class="red-hives" onclick="location.href='red-hives'">
             <h2>Red Hives</h2>
             <tile>Explore</tile>
         </section>
