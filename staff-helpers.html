@@ -39,10 +39,10 @@
             transition: transform 0.3s;
             overflow: hidden;
             position: relative;
-            width: 40%;
+            width: 80%;
             cursor: pointer;
+            margin: 0 auto; /* Center the section horizontally */
         }
-
 
         section:hover {
             transform: scale(1.1);
@@ -84,12 +84,30 @@
             background-color: #556b2f;
         }
 
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
         .mahir-profile {
-            background-color: #d99921; 
+            background-color: #d99921;
             display: flex;
             flex-direction: row;
             align-items: center;
             text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
+        }
+
+        .socky-profile {
+            background-color: #7777DF;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
         }
 
         .larsitas-profile {
@@ -98,6 +116,12 @@
             flex-direction: row;
             align-items: center;
             text-align: center;
+            width: 80%;
+            margin: 0 auto; /* Center the profile horizontally */
+        }
+
+        .larsitas-profile h2.profile-name {
+            margin-left: 640px; /* Move the text to the left by 100px */
         }
 
         .profile-container {
@@ -126,9 +150,7 @@
             padding: 20px;
             color: #fff;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            clear: both;
         }
 
         .discord-icon {
@@ -242,12 +264,21 @@
         <!-- Helpers Section -->
         <div class="role-section">
             <div class="role-title">Helpers</div>
-            <section class="mahir-profile" onclick="openPopup('mahir')">
-                <div class="profile-container">
-                    <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
-                </div>
-                <h2 class="profile-name">mahirishere</h2>
-            </section>
+            <div class="profiles">
+                <section class="mahir-profile" onclick="openPopup('mahir')">
+                    <div class="profile-container">
+                        <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
+                    </div>
+                    <h2 class="profile-name">mahirishere</h2>
+                </section>
+
+                <section class="socky-profile" onclick="openPopup('socky')">
+                    <div class="profile-container">
+                        <img src="images/socky.png" alt="Socky" class="profile">
+                    </div>
+                    <h2 class="profile-name">socky</h2>
+                </section>
+            </div>
         </div>
         
     </main>
@@ -284,6 +315,20 @@
             <div class="about-me">
                 <div class="about-me-title">About Me:</div>
                 <p>[Write something about Larsitas]</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sockyPopup" class="popup" onclick="closePopup('socky')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('socky')">&times;</span>
+            <h2 class="profile-name">socky</h2>
+            <div class="profile-container">
+                <img src="images/socky.png" alt="Socky" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>[Write something about Socky]</p>
             </div>
         </div>
     </div>
