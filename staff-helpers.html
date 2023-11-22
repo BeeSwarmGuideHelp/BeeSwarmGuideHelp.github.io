@@ -19,8 +19,9 @@
             background-color: #222;
             padding: 20px;
             color: #fff;
-            font-size: 36px;
+            font-size: 24px; /* Adjust the font size */
             margin-bottom: 20px;
+            font-weight: lighter; /* Adjust the font weight for a more minimal look */
         }
 
         main {
@@ -90,20 +91,20 @@
             gap: 20px;
         }
 
-        .mahir-profile {
+        .mahir-profile{
             background-color: #d99921;
             display: flex;
-            flex-direction: row;
+            flex-direction: column; /* Adjusted the layout to column */
             align-items: center;
             text-align: center;
             width: 80%;
             margin: 0 auto; /* Center the profile horizontally */
         }
-
-        .socky-profile {
+        
+        .socky-profile{
             background-color: #7777DF;
             display: flex;
-            flex-direction: row;
+            flex-direction: column; /* Adjusted the layout to column */
             align-items: center;
             text-align: center;
             width: 80%;
@@ -113,15 +114,11 @@
         .larsitas-profile {
             background-color: #00FFF2;
             display: flex;
-            flex-direction: row;
+            flex-direction: column; /* Adjusted the layout to column */
             align-items: center;
             text-align: center;
             width: 80%;
             margin: 0 auto; /* Center the profile horizontally */
-        }
-
-        .larsitas-profile h2.profile-name {
-            margin-left: 640px; /* Move the text to the left by 100px */
         }
 
         .profile-container {
@@ -138,7 +135,7 @@
         }
 
         .profile-name {
-            margin: 0 auto; 
+            margin: 10px 0 0; 
         }
 
         section:hover .about-me {
@@ -233,6 +230,23 @@
         <!-- Owners Section -->
         <div class="role-section">
             <div class="role-title">Owners</div>
+            <div class="profiles">
+                <!-- BadurMathGuy Profile -->
+                <section class="owners-profile" onclick="openPopup('badur')">
+                    <div class="profile-container">
+                        <img src="images/badurpfp.png" alt="BadurMathGuy" class="profile">
+                    </div>
+                    <h2 class="profile-name">BadurMathGuy</h2>
+                </section>
+
+                <!-- Xyrioc Profile -->
+                <section class="owners-profile" onclick="openPopup('xyrioc')">
+                    <div class="profile-container">
+                        <img src="images/xyriocpfp.png" alt="Xyrioc" class="profile">
+                    </div>
+                    <h2 class="profile-name">Xyrioc</h2>
+                </section>
+            </div>
         </div>
 
         <!-- Server Manager Section -->
