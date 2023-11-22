@@ -27,7 +27,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             padding: 20px;
         }
@@ -35,45 +35,90 @@
         section {
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            padding: 20px; /* Reduced padding */
+            padding: 20px;
             transition: transform 0.3s;
-            overflow: hidden; /* Ensure the border-radius applies correctly */
+            overflow: hidden;
             position: relative;
-            width: 80%; /* 20% less wide */
+            width: 40%;
             cursor: pointer;
         }
+
 
         section:hover {
             transform: scale(1.1);
         }
 
-        .mahir-profile {
+        .role-section {
+            margin-bottom: 30px;
+            grid-column: span 2;
+        }
+
+        .role-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d99921;
+            margin-bottom: 10px;
+        }
+
+        .owners {
+            background-color: #442222;
+        }
+
+        .server-manager {
+            background-color: #00FFF2;
+        }
+
+        .administrators {
+            background-color: #223344; 
+        }
+
+        .head-moderator {
             background-color: #d99921;
+        }
+
+        .trainee-moderators {
+            background-color: #556b2f;
+        }
+
+        .helpers {
+            background-color: #556b2f;
+        }
+
+        .mahir-profile {
+            background-color: #d99921; 
             display: flex;
-            flex-direction: row; /* Change to row */
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+
+        .larsitas-profile {
+            background-color: #00FFF2;
+            display: flex;
+            flex-direction: row;
             align-items: center;
             text-align: center;
         }
 
         .profile-container {
             overflow: hidden;
-            margin-right: 10px; /* Add margin between profile picture and text */
-            flex-shrink: 0; /* Ensure the profile picture doesn't shrink */
+            margin-right: 10px;
+            flex-shrink: 0;
         }
 
         .profile {
-            width: 60px; /* Smaller profile picture */
-            height: 60px; /* Smaller profile picture */
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin: 0 auto; /* Center the profile picture horizontally */
+            margin: 0 auto;
         }
 
         .profile-name {
-            margin: 0 auto; /* Center the profile name horizontally */
+            margin: 0 auto; 
         }
 
         section:hover .about-me {
-            opacity: 1; /* Show on hover */
+            opacity: 1;
         }
 
         footer {
@@ -90,14 +135,14 @@
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            vertical-align: middle; /* Align the Discord icon vertically */
+            vertical-align: middle; 
         }
 
         .discord-link {
             color: #fff;
             text-decoration: none;
             display: inline-block;
-            vertical-align: middle; /* Align the text vertically */
+            vertical-align: middle;
         }
 
         .copyright {
@@ -105,7 +150,6 @@
             font-size: 14px;
         }
 
-        /* Popup styles */
         .popup {
             display: none;
             position: fixed;
@@ -126,28 +170,34 @@
             width: 80%;
             border-radius: 10px;
             color: #fff;
-            text-align: center; /* Center the content */
+            text-align: center;
         }
 
         .close {
-            color: #fff;
+            color: #ccc;
             float: right;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 30px;
             cursor: pointer;
         }
 
-        .close:hover {
-            color: #bbb;
+        .close:hover,
+        .close:focus {
+            color: #fff;
         }
 
         .about-me {
-            text-align: left;
-            margin-top: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        section:hover .about-me {
+            opacity: 1;
         }
 
         .about-me-title {
             font-weight: bold;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -158,31 +208,49 @@
     </header>
 
     <main>
-        <section class="mahir-profile" onclick="openPopup('mahir')">
-            <div class="profile-container">
-                <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
-            </div>
-
-            <h2 class="profile-name">mahirishere</h2>
-        </section>
-    </main>
-
-    <!-- Popup -->
-    <div id="mahirPopup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup('mahir')">&times;</span>
-            <div class="profile-container">
-                <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
-            </div>
-
-            <h2 class="profile-name">mahirishere</h2>
-
-            <div class="about-me">
-                <div class="about-me-title">About Me:</div>
-                <p>I omor</p>
-            </div>
+        <!-- Owners Section -->
+        <div class="role-section">
+            <div class="role-title">Owners</div>
         </div>
-    </div>
+
+        <!-- Server Manager Section -->
+        <div class="role-section">
+            <div class="role-title">Server Manager</div>
+            <section class="larsitas-profile" onclick="openPopup('larsitas')">
+                <div class="profile-container">
+                    <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
+                </div>
+                <h2 class="profile-name">larsitas</h2>
+            </section>
+        </div>
+
+        <!-- Administrators Section -->
+        <div class="role-section">
+            <div class="role-title">Administrators</div>
+        </div>
+
+        <!-- Head Moderator Section -->
+        <div class="role-section">
+            <div class="role-title">Head Moderator</div>
+        </div>
+
+        <!-- Trainee Moderators Section -->
+        <div class="role-section">
+            <div class="role-title">Trainee Moderators</div>
+        </div>
+
+        <!-- Helpers Section -->
+        <div class="role-section">
+            <div class="role-title">Helpers</div>
+            <section class="mahir-profile" onclick="openPopup('mahir')">
+                <div class="profile-container">
+                    <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
+                </div>
+                <h2 class="profile-name">mahirishere</h2>
+            </section>
+        </div>
+        
+    </main>
 
     <footer>
         <a href="https://discord.com/invite/bsgh" class="discord-link">
@@ -192,7 +260,34 @@
         <div class="copyright">&copy; Bee Swarm Guide Help 2023</div>
     </footer>
 
-    <!-- Script for popup functionality -->
+    <div id="mahirPopup" class="popup" onclick="closePopup('mahir')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('mahir')">&times;</span>
+            <h2 class="profile-name">mahirishere</h2>
+            <div class="profile-container">
+                <img src="images/mahirpfp.gif" alt="Mahirishere" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>I omor</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="larsitasPopup" class="popup" onclick="closePopup('larsitas')">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('larsitas')">&times;</span>
+            <h2 class="profile-name">larsitas</h2>
+            <div class="profile-container">
+                <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
+            </div>
+            <div class="about-me">
+                <div class="about-me-title">About Me:</div>
+                <p>[Write something about Larsitas]</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openPopup(profileName) {
             document.getElementById(profileName + 'Popup').style.display = 'block';
