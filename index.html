@@ -156,21 +156,23 @@
         <button onclick="catchSecret()">Catch!</button>
     </div> 
 
-    <script>
-        let clickCount = 0; 
+<script>
+    let clickCount = 0; 
 
-        function handleHeaderClick() {
-            clickCount++;
-            if (clickCount >= 10) {
-                document.getElementById('secretPopup').style.display = 'block';
-            }
-        } 
+    function handleHeaderClick() {
+        clickCount++; 
 
-        function catchSecret() {
-            alert('Secret Caught!'); // You can replace this with your desired action
-            document.getElementById('secretPopup').style.display = 'none';
+        if (clickCount >= 10) {
+            document.getElementById('secretPopup').style.display = 'block';
+            clickCount = 0; // Reset the click count after revealing the secret
         }
-    </script>
+    } 
+
+    function catchSecret() {
+        alert('Secret Caught!'); // You can replace this with your desired action
+        document.getElementById('secretPopup').style.display = 'none';
+    }
+</script>
 </body>
 
 </html>
