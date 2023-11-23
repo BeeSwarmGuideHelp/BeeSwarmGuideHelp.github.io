@@ -54,7 +54,6 @@
                 display: none;
             }
         }
-
         header {
             background-color: #222;
             padding: 20px;
@@ -101,12 +100,13 @@
         }
 
         .owners-profile,
-        .administrators-profile {
+        .badur-profile {
+            background-color: #442222;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
@@ -131,8 +131,98 @@
         }
 
         .profiles {
-            display: flex; /* Updated to flex for better alignment */
-            justify-content: space-between; /* Updated to space-between for equal spacing */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: lighter;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        section:hover {
+            transform: scale(1.1);
+        }
+
+        .role-section {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .role-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d99921;
+            margin-bottom: 10px;
+        }
+
+        .owners-profile {
+            background-color: #442222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .badur-profile {
+            background-color: #00af9b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .server-manager-profile {
+            background-color: #00FFF2;
+        }
+
+        .administrators-profile {
+            background-color: #223344; 
+        }
+
+        .head-moderator-profile {
+            background-color: #d99921;
+        }
+
+        .trainee-moderators-profile {
+            background-color: #556b2f;
+        }
+
+        .helpers-profile {
+            background-color: #556b2f;
+        }
+
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -142,7 +232,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
@@ -152,57 +242,57 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
         .denz-profile {
-            background-color: #8b0000;
+            background-color: #8b0000; /* New profile color for Denz */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
         .gallax-profile {
-            background-color: #a600FF;
+            background-color: #a600FF; /* New profile color for Denz */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
         .ikyuover-profile {
-            background-color: #000000;
+            background-color: #000000; /* New profile color for Denz */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 90%;
             margin: 0 auto;
         }
 
         .larsitas-profile {
-            background-color: #00FFF2;
+            background-color: #00FFF2; /* New profile color for Denz */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 90%;
             margin: 0 auto;
         }
 
-        .dale-profile {
+     .dale-profile {
             background-color: #6920f0;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 40%; /* Updated width for desktop view */
+            width: 80%;
             margin: 0 auto;
         }
 
@@ -220,7 +310,7 @@
         }
 
         .profile-name {
-            margin: 10px 0 0;
+            margin: 10px 0 0; 
         }
 
         section:hover .about-me {
@@ -239,7 +329,7 @@
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            vertical-align: middle;
+            vertical-align: middle; 
         }
 
         .discord-link {
@@ -268,20 +358,20 @@
     </header>
 
     <main>
-
         <!-- Owners Section -->
         <div class="role-section">
             <div class="role-title">Owners</div>
             <div class="profiles">
 
-                <!-- BadurMathGuy Profile -->
-                <section class="badur-profile" onclick="openPopup('badur')">
-                    <div class="profile-container">
-                        <img src="images/badurpfp.png" alt="BadurMathGuy" class="profile">
-                    </div>
-                    <h2 class="profile-name profile-name-computer">BadurMathGuy</h2>
-                    <h2 class="profile-name profile-name-mobile computer-only">Badur</h2>
-                </section>
+<!-- BadurMathGuy Profile -->
+<section class="badur-profile" onclick="openPopup('badur')">
+    <div class="profile-container">
+        <img src="images/badurpfp.png" alt="BadurMathGuy" class="profile">
+    </div>
+    <h2 class="profile-name profile-name-computer">BadurMathGuy</h2>
+    <h2 class="profile-name profile-name-mobile computer-only">Badur</h2>
+</section>
+
 
                 <!-- Xyrioc Profile -->
                 <section class="owners-profile" onclick="openPopup('xyrioc')">
@@ -307,33 +397,37 @@
         <!-- Administrators Section -->
         <div class="role-section">
             <div class="role-title">Administrator</div>
-            <section class="gallax-profile" onclick="openPopup('gallax')">
-                <div class="profile-container">
-                    <img src="images/gallaxpfp.png" alt="Gallax" class="profile">
-                </div>
-                <h2 class="profile-name">Gallax</h2>
-            </section>
+        <section class="gallax-profile" onclick="openPopup('gallax')">
+            <div class="profile-container">
+                <img src="images/gallaxpfp.png" alt="Gallax" class="profile">
+            </div>
+            <h2 class="profile-name">Gallax</h2>
+        </section>
+    </div>
+</div>
 
-            <section class="dale-profile" onclick="openPopup('gallax')">
-                <div class="profile-container">
-                    <img src="images/dale.png" alt="Dale" class="profile">
-                </div>
-                <h2 class="profile-name">Dale</h2>
-            </section>
-        </div>
+        <section class="dale-profile" onclick="openPopup('gallax')">
+           <div class="profile-container">
+                <img src="images/dale.png" alt="Dale" class="profile">
+            </div>
+            <h2 class="profile-name">Dale</h2>
+        </section>
+    </div>
+</div>
 
-        <!-- Head Moderator Section -->
-        <div class="role-section">
-            <div class="role-title">Head Moderator</div>
-            <section class="ikyuover-profile" onclick="openPopup('ikyuover')">
-                <div class="profile-container">
-                    <img src="images/ikyupfp.png" alt="Ikyuover" class="profile">
-                </div>
-                <h2 class="profile-name">Ikyuover</h2>
-                <div class="about-me">
-                </div>
-            </section>
+<!-- Head Moderator Section -->
+<div class="role-section">
+    <div class="role-title">Head Moderator</div>
+    <section class="ikyuover-profile" onclick="openPopup('ikyuover')">
+        <div class="profile-container">
+            <img src="images/ikyupfp.png" alt="Ikyuover" class="profile">
         </div>
+        <h2 class="profile-name">Ikyuover</h2>
+        <div class="about-me">
+        </div>
+    </section>
+</div>
+
 
         <!-- Trainee Moderators Section -->
         <div class="role-section">
