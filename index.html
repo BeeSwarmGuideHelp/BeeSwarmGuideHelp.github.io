@@ -171,8 +171,12 @@
     function catchSecret() {
         alert('Secret Caught!'); // You can replace this with your desired action
         document.getElementById('secretPopup').style.display = 'none';
-    }
+    } 
+
+    // Attach the handleHeaderClick function to the header
+    document.querySelector('header').addEventListener('click', handleHeaderClick);
 </script>
+
 </body>
 
 </html>
