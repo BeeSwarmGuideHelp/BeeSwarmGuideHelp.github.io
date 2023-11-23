@@ -150,18 +150,26 @@
         </div>
     </footer>
 
-    <script>
-        let clickCount = 0;
+     <!-- Secret Popup -->
+    <div id="secretPopup">
+        <p>You have found a wild Ikyu..</p>
+        <button onclick="catchSecret()">Catch!</button>
+    </div> 
 
-        function checkSecretPopup() {
-            clickCount++;
+    <script>
+        let clickCount = 0; 
 
-            // Change the threshold (e.g., 5 clicks) as per your requirement
-            if (clickCount >= 5) {
-                alert("You have found a wild Ikyu.."); // You can replace this with your custom popup logic
-                clickCount = 0; // Reset the click count after displaying the popup
-            }
-        }
+        function handleHeaderClick() {
+            clickCount++;
+            if (clickCount >= 10) {
+                document.getElementById('secretPopup').style.display = 'block';
+            }
+        } 
+
+        function catchSecret() {
+            alert('Secret Caught!'); // You can replace this with your desired action
+            document.getElementById('secretPopup').style.display = 'none';
+        }
     </script>
 </body>
 
