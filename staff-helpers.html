@@ -286,15 +286,33 @@
             margin: 0 auto;
         }
 
-     .dale-profile {
-            background-color: #6920f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 80%;
-            margin: 0 auto;
-        }
+/* Dale Profile */
+.dale-profile {
+    background-color: #6920f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dale-profile .profile-container {
+    overflow: hidden;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.dale-profile .profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.dale-profile .profile-name {
+    margin: 10px 0 0;
+}
 
         .profile-container {
             overflow: hidden;
@@ -404,16 +422,14 @@
             <h2 class="profile-name">Gallax</h2>
         </section>
     </div>
-</div>
 
-        <section class="dale-profile" onclick="openPopup('gallax')">
-           <div class="profile-container">
-                <img src="images/dale.png" alt="Dale" class="profile">
-            </div>
-            <h2 class="profile-name">Dale</h2>
-        </section>
+<!-- Dale Profile -->
+<section class="dale-profile" onclick="openPopup('dale')">
+    <div class="profile-container">
+        <img src="images/dale.png" alt="Dale" class="profile">
     </div>
-</div>
+    <h2 class="profile-name">Dale</h2>
+</section>
 
 <!-- Head Moderator Section -->
 <div class="role-section">
