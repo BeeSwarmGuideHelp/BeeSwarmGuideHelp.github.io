@@ -64,32 +64,13 @@
             margin-top: 10px;
             font-size: 14px;
         }
-
-        /* Offline Message and Timer */
-        #offlineMessage {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        #status {
-            color: #00ff00;
-            font-size: 18px;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
     </style>
 </head>
 
 <body>
     <header onclick="checkSecret()">
-        Bee Swarm Guide Help
-    </header>
+        Bee Swarm Guide Help</header>
+   
 
     <main>
 
@@ -126,23 +107,6 @@
         </a>
         <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
         </div>
-    </footer>
-
-    <!-- Offline Message and Timer -->
-    <div id="offlineMessage">
-        <p>This website is currently down for maintenance.</p>
-        <p id="status">Current Status: Online in a few minutes.</p>
-    </div>
-
-    <script>
-        function checkSecret() {
-            document.getElementById('secretPopup').style.display = 'block';
-        }
-
-        function catchSecret() {
-            document.getElementById('secretPopup').style.display = 'none';
-        }
-
 </body>
 
 </html>
