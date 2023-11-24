@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bee Swarm Guide Help - Currently Down</title>
+    <title>Bee Swarm Guide Help</title>
     <style>
+        /* Your existing styles remain unchanged */
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #333;
@@ -21,14 +23,62 @@
             color: #fff;
             font-size: 36px;
             margin-bottom: 20px;
+            cursor: pointer; /* Add cursor pointer for user interaction */
         }
 
         main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
         section {
-            display: none;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        .red-hives {
+            background-color: #442222; /* Subtle red color */
+        }
+
+        .blue-hives {
+            background-color: #223344; /* Subtle blue color */
+        }
+
+        .white-hives {
+            background-color: #d4d3cf; /* Subtle white color */
+        }
+
+        .staff-helpers {
+            background-color: #556b2f; /* Subtle green color */
+        }
+
+        tile {
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: block;
+            text-align: center;
+        }
+
+        tile:hover {
+            background-color: #fff;
+            color: #333;
         }
 
         footer {
@@ -60,51 +110,67 @@
             font-size: 14px;
         }
 
-        /* Currently Down Styles */
-        #currentlyDown {
+        /* Popup styling */
+        .popup {
+            display: none;
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #333;
-            color: #fff;
             padding: 20px;
-            text-align: center;
-            font-size: 20px;
-            z-index: 9999;
+            background: #fff;
+            border-radius: 10px;
         }
 
-        /* Mobile Styles */
-        @media screen and (max-width: 600px) {
-            header {
-                font-size: 24px;
-            }
-
-            .discord-icon {
-                width: 20px;
-                height: 20px;
-                margin-right: 5px;
-            }
-
-            .copyright {
-                font-size: 12px;
-            }
+        /* Timer styling */
+        #status {
+            color: #ff0000;
+            font-size: 18px;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <!-- Currently Down Message -->
-    <div id="currentlyDown">
-        We're sorry, but the website is currently down for maintenance. Please check back later.
-    </div>
-
-    <header>
+    <header onclick="checkSecret()">
         Bee Swarm Guide Help
     </header>
 
     <main>
-        <!-- No content here -->
+
+        <section onclick="location.href='#general-guides'">
+            <h2>General Guides</h2>
+            <tile>Read Now</tile>
+        </section>
+
+        <section class="red-hives" onclick="location.href='red-hives'">
+            <h2>Red Hives</h2>
+            <tile>Explore</tile>
+        </section>
+
+        <section class="blue-hives" onclick="location.href='#blue-hives'">
+            <h2>Blue Hives</h2>
+            <tile>Discover</tile>
+        </section>
+
+        <section class="white-hives" onclick="location.href='#white-hives'">
+            <h2>White Hives</h2>
+            <tile>Learn More</tile>
+        </section>
+
+        <section class="staff-helpers" onclick="location.href='staff-helpers'">
+            <h2>Staff & Helpers</h2>
+            <tile>Meet the Team</tile>
+        </section>
     </main>
 
     <footer>
@@ -116,8 +182,43 @@
         </div>
     </footer>
 
-    <!-- Your existing scripts and closing body/html tags remain unchanged -->
+    <!-- Secret Popup -->
+    <div id="secretPopup" class="popup">
+        <div class="popup-content">
+            <p>Congratulations! You found the secret!</p>
+            <p onclick="catchSecret()">Catch</p>
+        </div>
+    </div>
 
+    <!-- Offline Message and Timer -->
+    <div id="offlineMessage" class="popup">
+        <div class="popup-content">
+            <p>This website is currently down for maintenance.</p>
+            <p id="status">Offline</p>
+        </div>
+    </div>
+
+    <script>
+        function checkSecret() {
+            document.getElementById('secretPopup').style.display = 'block';
+        }
+
+        function catchSecret() {
+            document.getElementById('secretPopup').style.display = 'none';
+        }
+
+        // Add your timer script here
+        var startTime = new Date().getTime();
+
+        function updateTimer() {
+            var currentTime = new Date().getTime();
+            var elapsedTime = currentTime - startTime;
+            var seconds = Math.floor(elapsedTime / 1000);
+            document.getElementById('status').innerText = `Offline for ${seconds} seconds`;
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
 
 </html>
