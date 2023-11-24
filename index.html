@@ -7,7 +7,7 @@
     <title>Bee Swarm Guide Help</title>
     <style>
         /* Your existing styles remain unchanged */
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #333;
@@ -145,7 +145,12 @@
         }
 
         // Add your timer script here
-        var startTime = new Date().getTime();
+        var startTime = localStorage.getItem('startTime');
+
+        if (!startTime) {
+            startTime = new Date().getTime();
+            localStorage.setItem('startTime', startTime);
+        }
 
         function updateTimer() {
             var currentTime = new Date().getTime();
