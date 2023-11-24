@@ -145,11 +145,11 @@
         }
 
         // Add your timer script here
-        var startTime = localStorage.getItem('startTime');
+        var startTime = sessionStorage.getItem('startTime');
 
         if (!startTime) {
             startTime = new Date().getTime();
-            localStorage.setItem('startTime', startTime);
+            sessionStorage.setItem('startTime', startTime);
         }
 
         function updateTimer() {
