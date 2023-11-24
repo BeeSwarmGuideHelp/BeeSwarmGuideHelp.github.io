@@ -156,7 +156,15 @@
             var currentTime = new Date().getTime();
             var elapsedTime = currentTime - startTime;
             var seconds = Math.floor(elapsedTime / 1000);
-            document.getElementById('offlineTimer').innerText = `Offline for ${seconds} seconds`;
+            var minutes = Math.floor(seconds / 60);
+            var hours = Math.floor(minutes / 60);
+            var days = Math.floor(hours / 24);
+
+            seconds %= 60;
+            minutes %= 60;
+            hours %= 24;
+
+            document.getElementById('offlineTimer').innerText = `Offline for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
         }
 
         setInterval(updateTimer, 1000);
