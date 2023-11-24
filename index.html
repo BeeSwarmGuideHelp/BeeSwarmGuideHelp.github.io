@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee Swarm Guide Help</title>
     <style>
-        /* Your existing styles remain unchanged */
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #333;
@@ -23,7 +21,6 @@
             color: #fff;
             font-size: 36px;
             margin-bottom: 20px;
-            cursor: pointer; /* Add cursor pointer for user interaction */
         }
 
         main {
@@ -33,6 +30,52 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+        }
+
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        .red-hives {
+            background-color: #442222; /* Subtle red color */
+        }
+
+        .blue-hives {
+            background-color: #223344; /* Subtle blue color */
+        }
+
+        .white-hives {
+            background-color: #d4d3cf; /* Subtle white color */
+        }
+
+        .staff-helpers {
+            background-color: #556b2f; /* Subtle green color */
+        }
+
+        tile {
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: block;
+            text-align: center;
+        }
+
+        tile:hover {
+            background-color: #fff;
+            color: #333;
         }
 
         footer {
@@ -67,33 +110,33 @@
 </head>
 
 <body>
-    <header onclick="checkSecret()">
-        Bee Swarm Guide Help</header>
-   
+    <header>
+        Bee Swarm Guide Help
+    </header>
 
     <main>
 
-        <section onclick="location.href='#general-guides'">
+        <section onclick="location.href='#general-guides.html'">
             <h2>General Guides</h2>
             <tile>Read Now</tile>
         </section>
-
-        <section class="red-hives" onclick="location.href='red-hives'">
+        
+        <section class="red-hives" onclick="location.href='red-hives.html'">
             <h2>Red Hives</h2>
             <tile>Explore</tile>
         </section>
 
-        <section class="blue-hives" onclick="location.href='#blue-hives'">
+        <section class="blue-hives" onclick="location.href='#blue-hives.html'">
             <h2>Blue Hives</h2>
             <tile>Discover</tile>
         </section>
 
-        <section class="white-hives" onclick="location.href='#white-hives'">
+        <section class="white-hives" onclick="location.href='#white-hives.html'">
             <h2>White Hives</h2>
             <tile>Learn More</tile>
         </section>
 
-        <section class="staff-helpers" onclick="location.href='staff-helpers'">
+        <section class="staff-helpers" onclick="location.href='staff-helpers.html'">
             <h2>Staff & Helpers</h2>
             <tile>Meet the Team</tile>
         </section>
@@ -106,6 +149,7 @@
         </a>
         <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
         </div>
+    </footer>
 </body>
 
 </html>
