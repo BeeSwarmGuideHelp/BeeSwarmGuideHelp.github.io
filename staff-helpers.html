@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bee Swarm Guide Help</title>
+    <title>Staff & Helpers - Bee Swarm Guide Help</title>
     <style>
         /* Your existing styles remain unchanged */
 
@@ -17,23 +17,348 @@
             text-align: center;
         }
 
+        @media screen and (max-width: 600px) {
+            /* Styles for mobile devices */
+            .computer-only {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+
+            .profile-name-computer {
+                display: none;
+            }
+
+            .profile-name-mobile {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            /* Styles for computers */
+            .computer-only {
+                display: block;
+            }
+
+            .mobile-only {
+                display: none;
+            }
+
+            .profile-name-computer {
+                display: block;
+            }
+
+            .profile-name-mobile {
+                display: none;
+            }
+        }
         header {
             background-color: #222;
             padding: 20px;
             color: #fff;
-            font-size: 36px;
+            font-size: 24px;
             margin-bottom: 20px;
-            cursor: pointer; /* Add cursor pointer for user interaction */
+            font-weight: lighter;
         }
 
         main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        section:hover {
+            transform: scale(1.1);
+        }
+
+        .role-section {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .role-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d99921;
+            margin-bottom: 10px;
+        }
+
+        .owners-profile,
+        .badur-profile {
+            background-color: #442222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .server-manager-profile {
+            background-color: #00FFF2;
+        }
+
+        .administrators-profile {
+            background-color: #223344;
+        }
+
+        .head-moderator-profile {
+            background-color: #d99921;
+        }
+
+        .trainee-moderators-profile {
+            background-color: #556b2f;
+        }
+
+        .helpers-profile {
+            background-color: #556b2f;
+        }
+
+        .profiles {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            justify-content: center;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: lighter;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             align-items: center;
             padding: 20px;
-            display: none; /* Hide the main content when the site is down */
+        }
+
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        section:hover {
+            transform: scale(1.1);
+        }
+
+        .role-section {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .role-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d99921;
+            margin-bottom: 10px;
+        }
+
+        .owners-profile {
+            background-color: #442222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .badur-profile {
+            background-color: #00af9b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .server-manager-profile {
+            background-color: #00FFF2;
+        }
+
+        .administrators-profile {
+            background-color: #223344; 
+        }
+
+        .head-moderator-profile {
+            background-color: #d99921;
+        }
+
+        .trainee-moderators-profile {
+            background-color: #556b2f;
+        }
+
+        .helpers-profile {
+            background-color: #556b2f;
+        }
+
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .mahir-profile {
+            background-color: #d99921;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .socky-profile {
+            background-color: #7777DF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .denz-profile {
+            background-color: #8b0000; /* New profile color for Denz */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .gallax-profile {
+            background-color: #a600FF; /* New profile color for Denz */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .ikyuover-profile {
+            background-color: #000000; /* New profile color for Denz */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .larsitas-profile {
+            background-color: #00FFF2; /* New profile color for Denz */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+/* Dale Profile */
+.dale-profile {
+    background-color: #6920f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.dale-profile .profile-container {
+    overflow: hidden;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.dale-profile .profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.dale-profile .profile-name {
+    margin: 10px 0 0;
+}
+
+.gallax-dale-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallax-profile {
+            background-color: #a600FF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%; /* Adjust the width for better responsiveness */
+            margin: 0 auto;
+        }
+
+        .dale-profile {
+            background-color: #6920f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%; /* Adjust the width for better responsiveness */
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            overflow: hidden;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .profile {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .profile-name {
+            margin: 10px 0 0; 
+        }
+
+        section:hover .about-me {
+            opacity: 1;
         }
 
         footer {
@@ -41,23 +366,21 @@
             padding: 20px;
             color: #fff;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            clear: both;
         }
 
         .discord-icon {
             width: 30px;
             height: 30px;
             margin-right: 10px;
-            vertical-align: middle; /* Align the Discord icon vertically */
+            vertical-align: middle; 
         }
 
         .discord-link {
             color: #fff;
             text-decoration: none;
             display: inline-block;
-            vertical-align: middle; /* Align the text vertically */
+            vertical-align: middle;
         }
 
         .copyright {
@@ -65,58 +388,126 @@
             font-size: 14px;
         }
 
-        /* Offline Message and Timer */
-        #offlineMessage {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        #status {
-            color: #ff0000;
-            font-size: 18px;
-            margin-top: 10px;
-            text-transform: uppercase;
+        @media screen and (max-width: 768px) {
+            section {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header onclick="checkSecret()">
-        Bee Swarm Guide Help
+    <header>
+        Staff & Helpers - Bee Swarm Guide Help
     </header>
 
     <main>
+        <!-- Owners Section -->
+        <div class="role-section">
+            <div class="role-title">Owners</div>
+            <div class="profiles">
 
-        <section onclick="location.href='#general-guides'">
-            <h2>General Guides</h2>
-            <tile>Read Now</tile>
-        </section>
+<!-- BadurMathGuy Profile -->
+<section class="badur-profile" onclick="openPopup('badur')">
+    <div class="profile-container">
+        <img src="gifs/badur.gif" alt="BadurMathGuy" class="profile">
+    </div>
+    <h2 class="profile-name profile-name-computer">BadurMathGuy</h2>
+    <h2 class="profile-name profile-name-mobile computer-only">Badur</h2>
+</section>
 
-        <section class="red-hives" onclick="location.href='red-hives'">
-            <h2>Red Hives</h2>
-            <tile>Explore</tile>
-        </section>
 
-        <section class="blue-hives" onclick="location.href='#blue-hives'">
-            <h2>Blue Hives</h2>
-            <tile>Discover</tile>
-        </section>
+                <!-- Xyrioc Profile -->
+                <section class="owners-profile" onclick="openPopup('xyrioc')">
+                    <div class="profile-container">
+                        <img src="images/xyriocpfp.png" alt="Xyrioc" class="profile">
+                    </div>
+                    <h2 class="profile-name">Xyrioc</h2>
+                </section>
+            </div>
+        </div>
 
-        <section class="white-hives" onclick="location.href='#white-hives'">
-            <h2>White Hives</h2>
-            <tile>Learn More</tile>
-        </section>
+        <!-- Server Manager Section -->
+        <div class="role-section">
+            <div class="role-title">Server Manager</div>
+            <section class="larsitas-profile" onclick="openPopup('larsitas')">
+                <div class="profile-container">
+                    <img src="images/larsitaspfp.png" alt="Larsitas" class="profile">
+                </div>
+                <h2 class="profile-name">larsitas</h2>
+            </section>
+        </div>
 
-        <section class="staff-helpers" onclick="location.href='staff-helpers'">
-            <h2>Staff & Helpers</h2>
-            <tile>Meet the Team</tile>
-        </section>
+    <!-- Administrators Section -->
+    <div class="role-section">
+        <div class="role-title">Administrator</div>
+        <div class="profiles gallax-dale-grid">
+            <!-- Gallax Profile -->
+            <section class="gallax-profile" onclick="openPopup('gallax')">
+                <div class="profile-container">
+                    <img src="images/gallaxpfp.png" alt="Gallax" class="profile">
+                </div>
+                <h2 class="profile-name">Gallax</h2>
+            </section>
+
+            <!-- Dale Profile -->
+            <section class="dale-profile" onclick="openPopup('dale')">
+                <div class="profile-container">
+                    <img src="images/dale.png" alt="Dale" class="profile">
+                </div>
+                <h2 class="profile-name profile-name-computer">Dale</h2>
+                <h2 class="profile-name profile-name-mobile">Dale</h2>
+            </section>
+        </div>
+    </div>
+
+<!-- Head Moderator Section -->
+<div class="role-section">
+    <div class="role-title">Head Moderator</div>
+    <section class="ikyuover-profile" onclick="openPopup('ikyuover')">
+        <div class="profile-container">
+            <img src="images/ikyupfp.png" alt="Ikyuover" class="profile">
+        </div>
+        <h2 class="profile-name">Ikyuover</h2>
+        <div class="about-me">
+        </div>
+    </section>
+</div>
+
+
+        <!-- Trainee Moderators Section -->
+        <div class="role-section">
+            <div class="role-title">Trainee Moderators</div>
+            <!-- Add content for Trainee Moderators if needed -->
+        </div>
+
+        <!-- Helpers Section -->
+        <div class="role-section">
+            <div class="role-title">Helpers</div>
+            <div class="profiles">
+                <section class="mahir-profile" onclick="openPopup('mahir')">
+                    <div class="profile-container">
+                        <img src="gifs/mahirpfp.gif" alt="Mahirishere" class="profile">
+                    </div>
+                    <h2 class="profile-name">mahirishere</h2>
+                </section>
+
+                <section class="socky-profile" onclick="openPopup('socky')">
+                    <div class="profile-container">
+                        <img src="images/socky.png" alt="Socky" class="profile">
+                    </div>
+                    <h2 class="profile-name">socky</h2>
+                </section>
+
+                <!-- Denz Profile -->
+                <section class="denz-profile" onclick="openPopup('denz')">
+                    <div class="profile-container">
+                        <img src="images/denz.png" alt="Denz" class="profile">
+                    </div>
+                    <h2 class="profile-name">Denz</h2>
+                </section>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -124,26 +515,20 @@
             <img src="images/discord.png" alt="Discord Icon" class="discord-icon">
             BSGH Discord
         </a>
-        <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
-        </div>
+        <div class="copyright">&copy; Bee Swarm Guide Help 2023</div>
     </footer>
 
-    <!-- Offline Message and Timer -->
-    <div id="offlineMessage">
-        <p>This website is currently down for maintenance.</p>
-        <p id="status">Current Status: Offline</p>
-        <p>DOWN SINCE 1AM EST FRIDAY NOV 24</p>
-    </div>
+    <!-- Add your popup divs and JavaScript for popups if needed -->
 
     <script>
-        function checkSecret() {
-            document.getElementById('secretPopup').style.display = 'block';
+        function openPopup(profileName) {
+            document.getElementById(profileName + 'Popup').style.display = 'block';
         }
 
-        function catchSecret() {
-            document.getElementById('secretPopup').style.display = 'none';
+        function closePopup(profileName) {
+            document.getElementById(profileName + 'Popup').style.display = 'none';
         }
-
+    </script>
 </body>
 
 </html>
