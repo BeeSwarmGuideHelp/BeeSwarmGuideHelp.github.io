@@ -132,7 +132,7 @@
     <div id="offlineMessage">
         <p>This website is currently down for maintenance.</p>
         <p id="status">Current Status: Offline</p>
-        <p id="offlineTimer"></p>
+        <p>DOWN SINCE 1AM EST FRIDAY NOV 24</p>
     </div>
 
     <script>
@@ -144,31 +144,6 @@
             document.getElementById('secretPopup').style.display = 'none';
         }
 
-        // Add your timer script here
-        var startTime = sessionStorage.getItem('startTime');
-
-        if (!startTime) {
-            startTime = new Date().getTime();
-            sessionStorage.setItem('startTime', startTime);
-        }
-
-        function updateTimer() {
-            var currentTime = new Date().getTime();
-            var elapsedTime = currentTime - startTime;
-            var seconds = Math.floor(elapsedTime / 1000);
-            var minutes = Math.floor(seconds / 60);
-            var hours = Math.floor(minutes / 60);
-            var days = Math.floor(hours / 24);
-
-            seconds %= 60;
-            minutes %= 60;
-            hours %= 24;
-
-            document.getElementById('offlineTimer').innerText = `Offline for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
-        }
-
-        setInterval(updateTimer, 1000);
-    </script>
 </body>
 
 </html>
