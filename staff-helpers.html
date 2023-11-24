@@ -314,6 +314,32 @@
     margin: 10px 0 0;
 }
 
+.gallax-dale-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallax-profile {
+            background-color: #a600FF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%; /* Adjust the width for better responsiveness */
+            margin: 0 auto;
+        }
+ 
+        .dale-profile {
+            background-color: #6920f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%; /* Adjust the width for better responsiveness */
+            margin: 0 auto;
+        }
+
         .profile-container {
             overflow: hidden;
             margin-right: 10px;
@@ -412,24 +438,28 @@
             </section>
         </div>
 
-        <!-- Administrators Section -->
-        <div class="role-section">
-            <div class="role-title">Administrator</div>
-        <section class="gallax-profile" onclick="openPopup('gallax')">
-            <div class="profile-container">
-                <img src="images/gallaxpfp.png" alt="Gallax" class="profile">
-            </div>
-            <h2 class="profile-name">Gallax</h2>
-        </section>
-    </div>
+    <!-- Administrators Section -->
+    <div class="role-section">
+        <div class="role-title">Administrator</div>
+        <div class="profiles gallax-dale-grid">
+            <!-- Gallax Profile -->
+            <section class="gallax-profile" onclick="openPopup('gallax')">
+                <div class="profile-container">
+                    <img src="images/gallaxpfp.png" alt="Gallax" class="profile">
+                </div>
+                <h2 class="profile-name">Gallax</h2>
+            </section>
 
-<!-- Dale Profile -->
-<section class="dale-profile" onclick="openPopup('dale')">
-    <div class="profile-container">
-        <img src="images/dale.png" alt="Dale" class="profile">
+            <!-- Dale Profile -->
+            <section class="dale-profile" onclick="openPopup('dale')">
+                <div class="profile-container">
+                    <img src="images/dale.png" alt="Dale" class="profile">
+                </div>
+                <h2 class="profile-name profile-name-computer">Dale</h2>
+                <h2 class="profile-name profile-name-mobile">Dale</h2>
+            </section>
+        </div>
     </div>
-    <h2 class="profile-name">Dale</h2>
-</section>
 
 <!-- Head Moderator Section -->
 <div class="role-section">
