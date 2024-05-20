@@ -1,65 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Bee Swarm Simulator Guides</title>
-  <style>
-    body {
-      background-color: #333;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Swarm Guide Help</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 20px;
-      padding: 20px;
-    }
+        header {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-    .tile {
-      background-color: #555;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+        main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-    .tile:hover {
-      background-color: #777;
-    }
+        section {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden; /* Ensure the border-radius applies correctly */
+        }
 
-    h1 {
-      text-align: center;
-    }
-  </style>
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        .red-hives {
+            background-color: #442222; /* Subtle red color */
+        }
+
+        .blue-hives {
+            background-color: #223344; /* Subtle blue color */
+        }
+
+        .white-hives {
+            background-color: #d4d3cf; /* Subtle white color */
+        }
+
+        .staff-helpers {
+            background-color: #556b2f; /* Subtle green color */
+        }
+
+        tile {
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: block;
+            text-align: center;
+        }
+
+        tile:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        footer {
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .discord-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle; /* Align the Discord icon vertically */
+        }
+
+        .discord-link {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: middle; /* Align the text vertically */
+        }
+
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Popup styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 1000;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+    </style>
 </head>
+
 <body>
-  <h1>Bee Swarm Simulator Guides</h1>
-  <div class="container">
-    <div class="tile" onclick="location.href='#general';">General Guides</div>
-    <div class="tile" onclick="location.href='#red-hive';">Red Hive Guides</div>
-    <div class="tile" onclick="location.href='#blue-hive';">Blue Hive Guides</div>
-    <div class="tile" onclick="location.href='#white-hive';">White Hive Guides</div>
-  </div>
 
-  <div id="general">
-    <h2>General Guides</h2>
-    <p>Insert your general guides content here.</p>
-  </div>
+    <header>
+        Bee Swarm Guide Help
+    </header>
 
-  <div id="red-hive">
-    <h2>Red Hive Guides</h2>
-    <p>Insert your Red Hive guides content here.</p>
-  </div>
+    <main>
+        <section onclick="location.href='#general-guides.html'">
+            <h2>General Guides</h2>
+            <tile>Read Now</tile>
+        </section>
 
-  <div id="blue-hive">
-    <h2>Blue Hive Guides</h2>
-    <p>Insert your Blue Hive guides content here.</p>
-  </div>
+        <section class="red-hives" onclick="location.href='red-hives.html'">
+            <h2>Red Hives</h2>
+            <tile>Read Now</tile>
+        </section>
 
-  <div id="white-hive">
-    <h2>White Hive Guides</h2>
-    <p>Insert your White Hive guides content here.</p>
-  </div>
+        <section class="blue-hives" onclick="location.href='#blue-hives.html'">
+            <h2>Blue Hives</h2>
+            <tile>Read Now</tile>
+        </section>
+
+        <section class="white-hives" onclick="location.href='#white-hives.html'">
+            <h2>White Hives</h2>
+            <tile>Read Now</tile>
+        </section>
+
+        <section class="staff-helpers" onclick="location.href='staff-helpers.html'">
+            <h2>Staff & Helpers</h2>
+            <tile>Meet the Team</tile>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://discord.com/invite/bsgh" class="discord-link">
+            <img src="images/discord.png" alt="Discord Icon" class="discord-icon">
+            BSGH Discord
+        </a>
+        <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
+        </div>
+    </footer>
 </body>
+
 </html>
