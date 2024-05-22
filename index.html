@@ -36,7 +36,7 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
       padding: 30px;
       transition: transform 0.3s;
-      overflow: hidden; /* Ensure the border-radius applies correctly */
+      overflow: hidden;
     }
 
     section:hover {
@@ -44,19 +44,19 @@
     }
 
     .red-hives {
-      background-color: #442222; /* Subtle red color */
+      background-color: #442222;
     }
 
     .blue-hives {
-      background-color: #223344; /* Subtle blue color */
+      background-color: #223344;
     }
 
     .white-hives {
-      background-color: #d4d3cf; /* Subtle white color */
+      background-color: #d4d3cf;
     }
 
     .staff-helpers {
-      background-color: #556b2f; /* Subtle green color */
+      background-color: #556b2f;
     }
 
     .tile {
@@ -87,22 +87,29 @@
       width: 100%;
     }
 
-    footer:hover {  /* Added hover effect for footer */
+    footer:hover {
       background-color: #1a1a1a;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .discord-link {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     .discord-icon {
       width: 30px;
       height: 30px;
       margin-right: 10px;
-      vertical-align: middle; /* Align the Discord icon vertically */
-    }
-
-    .discord-link {
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      vertical-align: middle; /* Align the text vertically */
     }
 
     .copyright {
@@ -110,7 +117,6 @@
       font-size: 14px;
     }
 
-    /* Popup styles */
     .overlay {
       display: none;
       position: fixed;
@@ -118,7 +124,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1000;
     }
 
@@ -137,7 +143,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <header>
@@ -172,12 +177,15 @@
   </main>
 
   <footer>
-    <a href="https://discord.com/invite/bsgh" class="discord-link">
-      <img src="images/discord.png" alt="Discord Icon" class="discord-icon">
-      BSGH Discord
-    </a>
-    <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
+    <div class="footer-content">
+      <a href="https://discord.com/invite/bsgh" class="discord-link">
+        <img src="images/discord.png" alt="Discord Icon" class="discord-icon">
+        BSGH Discord
+      </a>
+      <div class="copyright">&copy; Bee Swarm Guide Help 2023 | Website Made By: @realnothim on Discord
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
