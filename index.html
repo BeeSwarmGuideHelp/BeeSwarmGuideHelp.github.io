@@ -85,12 +85,7 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      transform: translateY(100%);
-      transition: transform 0.3s;
-    }
-
-    footer.visible {
-      transform: translateY(0);
+      display: none; /* Initially hide the footer */
     }
 
     .footer-content {
@@ -117,31 +112,6 @@
     .copyright {
       margin-top: 10px;
       font-size: 14px;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #333;
-      color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      z-index: 1001;
     }
   </style>
 </head>
@@ -193,9 +163,9 @@
     window.addEventListener('scroll', function() {
       const footer = document.getElementById('footer');
       if (window.scrollY > 100) {
-        footer.classList.add('visible');
+        footer.style.display = 'block';
       } else {
-        footer.classList.remove('visible');
+        footer.style.display = 'none';
       }
     });
   </script>
