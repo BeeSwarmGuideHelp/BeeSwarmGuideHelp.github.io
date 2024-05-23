@@ -7,45 +7,53 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #333;
+      background-color: #2a2a2a; /* Dark grey background */
       color: #fff;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       text-align: center;
     }
 
     section {
+      background-color: #3a3a3a; /* Dark grey */
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      transition: transform 0.3s;
-      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); /* Subtle red shadow */
+      padding: 20px;
       margin: 20px auto;
       max-width: 800px;
       text-align: left;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     section:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
+      background-color: #4a4a4a; /* Slightly lighter grey on hover */
     }
 
-    .tile {
-      padding: 15px 30px;
-      color: #fff;
+    section h2 {
+      margin: 0 0 10px 0;
+      color: #ff6666; /* Light red */
+    }
+
+    section .content {
+      display: none;
+      padding-top: 10px;
+    }
+
+    section.active .content {
+      display: block;
+    }
+
+    .content p {
+      padding: 8px 12px;
+      background-color: #4a4a4a; /* Slightly lighter grey */
       border-radius: 5px;
-      transition: background-color 0.3s;
-      font-size: 18px;
-      border: 2px solid #fff;
-      cursor: pointer;
-      box-sizing: border-box;
-      display: inline-block;
-      text-align: center;
-      margin: 5px;
+      margin: 5px 0;
     }
 
-    .tile:hover {
-      background-color: #fff;
-      color: #333;
+    .content p:hover {
+      background-color: #5a5a5a; /* Even lighter grey on hover */
     }
   </style>
 </head>
@@ -56,59 +64,49 @@
   </header>
 
   <main>
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Red Hive Information</h2>
-      <p>One of the four Hive Colors in Bee Swarm Simulator, along with Blue, White, and Mixed Hives.</p>
-      <p>Mostly consists of Red Bees.</p>
-      <p>Second most costly Hive Color but has the highest overall Attack.</p>
-      <p>Often considered the best hive color.</p>
+      <div class="content">
+      </div>
     </section>
 
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Requirements</h2>
-      <div class="tile">Specific items and resources needed for optimization.</div>
-      <div class="tile">Includes SSA, fuzzy alt(s), Dark Scythe, Demon Mask, Thousands Of Stingers, etc.</div>
-      <div class="tile">Digital Bee required with a specific number of Red Drives.</div>
+      <div class="content">
+      </div>
     </section>
 
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Optimal Amulets</h2>
-      <div class="tile">Supreme Star Amulet</div>
-      <div class="tile">Cog Amulet</div>
-      <div class="tile">Shell Amulet</div>
-      <div class="tile">Stick Bug Amulet</div>
-      <div class="tile">Moon Amulet</div>
-      <div class="tile">Ant Amulet</div>
-      <div class="tile">King Beetle Amulet</div>
+      <div class="content">
+      </div>
     </section>
 
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Community Red Hives</h2>
-      <div class="tile">List of players who have Red Hives.</div>
+      <div class="content">
+      </div>
     </section>
 
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Instructions/Tips for Red Hives</h2>
-      <div class="tile">Boosting strategy outlined in detail, including the use of items like Glitter, Purple Potion, Loaded Dice, Scorching Star, Star Saw, etc.</div>
+      <div class="content">
+      </div>
     </section>
 
-    <section>
+    <section onclick="toggleContent(this)">
       <h2>Hive Composition</h2>
-      <div class="tile">Detailed list of recommended bees for Common, Rare, Epic, Legendary, Mythic, and Event categories.</div>
-      <div class="tile">Beequips (equipment) listed for various bees.</div>
-      <div class="tile">Mutation details for different bee types.</div>
-    </section>
-
-    <section>
-      <h2>Trivia</h2>
-      <p>Not provided.</p>
-    </section>
-
-    <section>
-      <h2>Gallery</h2>
-      <p>Not provided.</p>
+      <div class="content">
+      </div>
     </section>
   </main>
 
+  <script>
+    function toggleContent(section) {
+      section.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
+  
