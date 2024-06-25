@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Status</title>
-</head>
-<body>
-    <h1>Project Status</h1>
-    <ul>
-        {% for project in projects %}
-            <li>{{ project.name }} - {{ project.status }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Sample project data
+projects = [
+    {"name": "Project A", "status": "In Progress", "description": "Lorem ipsum..."},
+    {"name": "Project B", "status": "Upcoming", "description": "Dolor sit amet..."},
+    # Add more project data as needed
+]
+
+@app.route('/')
+def index():
+    return render_template('index.html', projects=projects)
+
+if __name__ == '__main__':
+    app.run(debug=True)
