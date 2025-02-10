@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Hives Information</title>
+  <title>Red Hives</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #2a2a2a; /* Dark grey background */
+      background-color: #2a2a2a;
       color: #fff;
       margin: 0;
       padding: 20px;
@@ -15,9 +15,9 @@
     }
 
     section {
-      background-color: #3a3a3a; /* Dark grey */
+      background-color: #3a3a3a;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1); /* Subtle red shadow */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
       padding: 20px;
       margin: 20px auto;
       max-width: 800px;
@@ -28,106 +28,192 @@
 
     section:hover {
       transform: scale(1.02);
-      background-color: #4a4a4a; /* Slightly lighter grey on hover */
+      background-color: #4a4a4a;
     }
 
     section h2 {
-      margin: 0 0 10px 0;
-      color: #ff6666; /* Light red */
+      margin: 0;
+      color: #ff6666;
     }
 
-    section p {
-      margin: 10px 0;
-      color: #ddd; /* Light grey */
+    .modal {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    .content {
-      display: none;
-      padding-top: 10px;
+    .modal.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
     }
 
-    .active .content {
-      display: block;
+    .modal-content {
+      background-color: #3a3a3a;
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      text-align: left;
     }
 
-    .content p {
-      padding: 8px 12px;
-      background-color: #4a4a4a; /* Slightly lighter grey */
+    .modal-content h2 {
+      margin-top: 0;
+      color: #ff6666;
+    }
+
+    .modal-content p {
+      color: #ddd;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      background-color: #ff6666;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
       border-radius: 5px;
-      margin: 5px 0;
+      cursor: pointer;
+      float: right;
+      margin-top: -10px;
+      margin-right: -10px;
     }
 
-    .content p:hover {
-      background-color: #5a5a5a; /* Even lighter grey on hover */
+    .close-btn:hover {
+      background-color: #ff4444;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Red Hive Information</h1>
+    <h1>Red Hive</h1>
   </header>
 
   <main>
-    <section onclick="toggleContent(this)">
-      <h2>Red Hive Information</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-      </div>
-    </section>
-
-    <section onclick="toggleContent(this)">
+    <section onclick="openModal('modal1')">
       <h2>Requirements</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-      </div>
     </section>
 
-    <section onclick="toggleContent(this)">
+    <section onclick="openModal('modal2')">
       <h2>Optimal Amulets</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-      </div>
-    </section>
-
-    <section onclick="toggleContent(this)">
-      <h2>Community Red Hives</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-      </div>
-    </section>
-
-    <section onclick="toggleContent(this)">
-      <h2>Instructions/Tips for Red Hives</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-      </div>
-    </section>
-
-    <section onclick="toggleContent(this)">
-      <h2>Hive Composition</h2>
-      <div class="content">
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-        <p>Placeholder title</p>
-      </div>
     </section>
   </main>
 
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal1')">Close</button>
+      <h2>Requirements</h2>
+      <p>Full Level 20 Hive or Higher</p>
+      <p>Fully Gifted Hive</p>
+      <p>Dark Scythe</p>
+      <p>500 Red and White Drives on Digital Bee</p>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal2')">Close</button>
+      <h2>Optimal Amulets</h2>
+      <p onclick="openModal('modal3')">King Beetle</p>
+      <p onclick="openModal('modal4')">Ant</p>
+      <p onclick="openModal('modal5')">Stickbug</p>
+      <p onclick="openModal('modal6')">Star</p>
+      <p onclick="openModal('modal7')">Cog</p>
+      <p onclick="openModal('modal8')">Shell</p>
+    </div>
+  </div>
+
+  <!-- Nested Modals -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal3')">Close</button>
+      <h2>King Beetle</h2>
+      <p>+1 Bee Attack</p>
+      <p>100% Strawberry Pollen</p>
+      <p>100% Mushroom Pollen</p>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal4')">Close</button>
+      <h2>Ant</h2>
+      <p>5% Pollen</p>
+      <p>3% Critical Chance</p>
+      <p>50% Critical Power</p>
+      <p>30% Blue Pollen</p>
+      <p>30% Red Pollen</p>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal5')">Close</button>
+      <h2>Stickbug</h2>
+      <p>+1 Bee Attack</p>
+      <p>+2 Red Bee Attack</p>
+      <p>30% Red Pollen</p>
+      <p>10% Bee Attack</p>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal6')">Close</button>
+      <h2>Star</h2>
+      <p>12% Instant Conversion</p>
+      <p>7% Critical Chance</p>
+      <p>70% Red Pollen</p>
+      <p>20% Pollen</p>
+      <p>7% Bee Ability Rate</p>
+    </div>
+  </div>
+
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal7')">Close</button>
+      <h2>Cog</h2>
+      <p>15% Bee Attack</p>
+      <p>30% Red Pollen</p>
+      <p>20% Event Bee Pollen</p>
+      <p>25% Super-Crit Power</p>
+      <p>5% Instant Red Conversion</p>
+    </div>
+  </div>
+
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal8')">Close</button>
+      <h2>Shell</h2>
+      <p>+25 Convert Amount</p>
+      <p>10% Goo Conversion</p>
+    </div>
+  </div>
+
   <script>
-    function toggleContent(section) {
-      section.classList.toggle('active');
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add('active');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove('active');
     }
   </script>
 
