@@ -110,6 +110,10 @@
     <section onclick="openModal('modal2')">
       <h2>Optimal Amulets</h2>
     </section>
+
+    <section onclick="openModal('modalMutation')">
+      <h2>Mutation</h2>
+    </section>
   </main>
 
   <!-- Modal 1 -->
@@ -135,6 +139,17 @@
       <p onclick="openModal('modal6')">Star</p>
       <p onclick="openModal('modal7')">Cog</p>
       <p onclick="openModal('modal8')">Shell</p>
+    </div>
+  </div>
+
+  <!-- Mutation Modal -->
+  <div id="modalMutation" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modalMutation')">Close</button>
+      <h2>Mutation</h2>
+      <p>Red Mutation: Increases red pollen collection by 25%</p>
+      <p>Attack Mutation: Boosts bee attack stats by 15%</p>
+      <p>Energy Mutation: Enhances energy regeneration rate</p>
     </div>
   </div>
 
