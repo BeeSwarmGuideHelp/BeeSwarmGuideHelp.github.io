@@ -142,16 +142,50 @@
     </div>
   </div>
 
-  <!-- Mutation Modal -->
-  <div id="modalMutation" class="modal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal('modalMutation')">Close</button>
-      <h2>Mutation</h2>
-      <p>Red Mutation: Increases red pollen collection by 25%</p>
-      <p>Attack Mutation: Boosts bee attack stats by 15%</p>
-      <p>Energy Mutation: Enhances energy regeneration rate</p>
-    </div>
+<!-- Mutation Modal -->
+<div id="modalMutation" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalMutation')">Close</button>
+    <h2>Mutation</h2>
+    <p onclick="openModal('modalEarlyGame')">Early Game Hive</p>
+    <p onclick="openModal('modalOptimizedGame')">Optimized Hive</p>
+    <p onclick="openModal('modalEndGame')">End Game Hive</p>
   </div>
+</div>
+
+<!-- Early Game Hive Modal -->
+<div id="modalEarlyGame" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalEarlyGame')">Close</button>
+    <h2>Early Game Hive</h2>
+    <p>Contains mostly Common and Rare bees.</p>
+    <p>Focuses on basic pollen collection and beginner bonuses.</p>
+    <p>Ideal for players starting out with low resources.</p>
+  </div>
+</div>
+
+<!-- Optimized Hive Modal -->
+<div id="modalOptimizedGame" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalOptimizedGame')">Close</button>
+    <h2>Optimized Hive</h2>
+    <p>Includes a balanced mix of Epic and Legendary bees.</p>
+    <p>Prioritizes red pollen and mid-game progression.</p>
+    <p>Requires some investment in upgrades and strategy.</p>
+  </div>
+</div>
+
+<!-- End Game Hive Modal -->
+<div id="modalEndGame" class="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalEndGame')">Close</button>
+    <h2>End Game Hive</h2>
+    <p>Comprises fully leveled and gifted bees.</p>
+    <p>Utilizes a specialized mix of Mythic and Event bees.</p>
+    <p>Maximizes pollen collection and advanced game bonuses.</p>
+  </div>
+</div>
+
 
   <!-- Nested Modals -->
   <div id="modal3" class="modal">
